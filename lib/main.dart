@@ -24,19 +24,19 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Bottom Navigation Bar'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
+//   final String title;
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   NavbarIndexController indexController = Get.put(NavbarIndexController());
   // int navIndex = 0;
 
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Scaffold(
             appBar: AppBar(
               backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-              title: Text(widget.title),
+              title: Text("Bottom Navigation"),
             ),
             bottomNavigationBar: Obx(() {
               return BottomNavigationBar(
